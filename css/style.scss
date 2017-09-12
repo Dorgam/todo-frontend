@@ -1,0 +1,328 @@
+/* Sass Variables */
+$font-regular: Dubai-Regular;
+$font-medium: Dubai-Medium;
+$sidebar-background-color: #273648;
+$sidebar-selected-background-color: #4a90e2;
+$sidebar-list-items-color: #edf4fc;
+$content-background-color: white;
+$tasks-headers-text-color: #30394a;
+$task-tags-color: #e0e0e0;
+$tasks-text-color: #666666;
+
+/* Defining Dubai Fonts */
+@font-face {
+    font-family: Dubai-Medium;
+     src: url("../fonts/DubaiW23-Medium.woff2") format("woff2"),
+        url("../fonts/DubaiW23-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: Dubai-Regular;
+     src: url("../fonts/DubaiW23-Regular.woff2") format("woff2"),
+        url("../fonts/DubaiW23-Regular.woff") format("woff");
+}
+
+ body {
+    overflow-x: hidden;
+    background: $content-background-color;
+ }
+
+ /* Sidebar Toggle Styles */
+
+#wrapper {
+    padding-right: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-right: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    right: 250px;
+    width: 0;
+    height: 100%;
+    margin-right: -250px;
+    overflow-y: auto;
+    background: $sidebar-background-color;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-left: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+    background: $sidebar-background-color;
+}
+
+#selected-menu-item {
+    background: $sidebar-selected-background-color;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    font-family: Dubai-Medium;
+    font-size: 18px;
+    color: $sidebar-list-items-color;
+    text-align: right;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    margin-top: 23px;
+    margin-right: 16px;
+    margin-bottom: 65px;
+}
+
+.sidebar-nav li .glyphicon {
+    color: $sidebar-list-items-color;
+    margin-right: 16px;
+    margin-top: 10px;
+    font-size: 20px;
+    padding-top: 8px;
+}
+
+/* User info sytles */
+
+.user-wrap {
+    position: absolute;
+    border-top: 2px solid #3d4a5a;
+    bottom: 25px;
+    color: white;
+    width: 100%;
+}
+
+#user-pic {
+    margin-right: 16px;
+    margin-top: 16px; 
+    margin-left: 16px;
+}
+
+#user-name {
+    font-family: $font-medium;
+    font-size: 14px;
+    color: #edf4fc;
+    text-align: right;
+    margin-top: 20px;
+}
+
+#user-company {
+    font-family: $font-medium;
+    font-size: 11px;
+    color: rgba(237,244,252,0.50);
+    text-align: right;
+
+}
+
+#triangle-bottom-icon {
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+/* Content Styles */
+
+/* Task Bar Styles */
+
+.dropdown-task {
+    width: 100%;
+    text-align: right;
+}
+
+.search {
+    width: 100%;
+    text-align: right;
+}
+
+/* Task Styles */
+
+.task {
+    margin-top: 20px;
+}
+
+.task-bar {
+    padding-bottom: 5px;
+    box-shadow: 0 2px 6px -6px #222;
+}
+
+.task-section-header h2 {
+    font-family: $font-medium;
+    font-size: 20px;
+    color: $tasks-headers-text-color;
+    text-align: right;
+}
+
+.task-section-body {
+    box-shadow: 0px 0px 1px #888888;
+    padding-right: 1%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+}
+
+.task-text {
+    font-family: $font-regular;
+    font-size: 18px;
+    color: $tasks-text-color;
+    text-align: right;
+    padding-right: 0px;
+}
+
+.task-tag button {
+    background: $task-tags-color;
+}
+
+.check-zone {
+    text-align: right;
+    padding-left: 0px;
+}
+
+.checked .task-text {
+    text-decoration: line-through;
+    color:rgba(102,102,102,0.50);
+}
+
+.checked .btn-circle {
+    background: #00e352 !important;
+    border: 0;
+}
+
+.checked i {
+    color: white;
+}
+
+/* Responsiveness Queries */
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-right: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-right: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-left: 0;
+    }
+}
+
+@media(max-width: 500px) {
+    .task-section-body {
+        padding-right: 10%;
+    }
+    .task-text {
+        padding-right: 2%;
+    }
+}
+
+@media(max-width: 850px) {
+    .task-text {
+        padding-right: 2%; 
+    }
+}
+
+/* Buttons Snippets */
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+}
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 35px;
+}
+.btn-round-lg{
+    border-radius: 22.5px;
+    }
+    .btn-round{
+    border-radius: 17px;
+    }
+    .btn-round-sm{
+    border-radius: 15px;
+    }
+    .btn-round-xs{
+    border-radius: 11px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Centering Columns snippet */
+.col-centered {
+    float: none;
+    margin: 0 auto;
+ }

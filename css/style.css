@@ -1,3 +1,4 @@
+/* Defining Dubai-Medium Font */
 @font-face {
     font-family: Dubai-Medium;
      src: url("../fonts/DubaiW23-Medium.woff2") format("woff2"),
@@ -8,7 +9,7 @@
     overflow-x: hidden;
  }
 
-/* Toggle Styles */
+ /* Sidebar Toggle Styles */
 
 #wrapper {
     padding-right: 0;
@@ -61,7 +62,6 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    /*text-align: right;*/
 }
 
 .sidebar-nav li {
@@ -100,18 +100,6 @@
     margin-top: 23px;
     margin-right: 16px;
     margin-bottom: 65px;
-    /*height: 65px;*/
-}
-
-#x-icon {
-    color: #444;
-    margin-top: 8px;
-    padding: 0;
-    margin-left: 8px;
-}
-
-#x-icon:hover {
-    color: white;
 }
 
 .sidebar-nav li .glyphicon {
@@ -122,10 +110,12 @@
     padding-top: 8px;
 }
 
+/* User info sytles */
+
 .user-wrap {
     position: absolute;
     border-top: 2px solid #3d4a5a;
-    bottom: 30px;
+    bottom: 25px;
     color: white;
     width: 100%;
 }
@@ -159,6 +149,8 @@
 
 /* Content Styles */
 
+/* Task Bar Styles */
+
 .dropdown-task {
     width: 100%;
     text-align: right;
@@ -169,6 +161,8 @@
     text-align: right;
 }
 
+/* Task Styles */
+
 .task {
     margin-top: 20px;
 }
@@ -177,10 +171,6 @@
     padding-bottom: 5px;
     box-shadow: 0 2px 6px -6px #222;
 }
-
-/*.task-section-header {
-    box-shadow: 0 2px 6px -6px #222;
-}*/
 
 .task-section-header h2 {
     font-family:Dubai-Medium;
@@ -191,7 +181,9 @@
 
 .task-section-body {
     box-shadow: 0px 0px 1px #888888;
-    padding: 10px;
+    padding-right: 1%;
+    padding-left: 1%;
+    padding-bottom: 1%;
 }
 
 .task-text {
@@ -225,6 +217,8 @@
     color: white;
 }
 
+/* Responsiveness Queries */
+
 @media(min-width:768px) {
     #wrapper {
         padding-right: 250px;
@@ -250,6 +244,21 @@
     #wrapper.toggled #page-content-wrapper {
         position: relative;
         margin-left: 0;
+    }
+}
+
+@media(max-width: 500px) {
+    .task-section-body {
+        padding-right: 10%;
+    }
+    .task-text {
+        padding-right: 2%;
+    }
+}
+
+@media(max-width: 850px) {
+    .task-text {
+        padding-right: 2%; 
     }
 }
 
